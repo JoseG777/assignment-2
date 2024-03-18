@@ -65,7 +65,24 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+        // If there are no rows, do nothing
+        if(numRows == 0){
+            return;
+        }
+    
+        let table = document.getElementById("grid");
+    
+        // get the first row
+        let row = table.querySelector("tr");
+    
+        // remove the first row
+        table.removeChild(row);
+        numRows--;
+    
+        // if the row we removed was the last remaining row, then we have no columns
+        if(numRows == 0){
+            numCols = 0;
+        }
 }
 
 // Remove a column
