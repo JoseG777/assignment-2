@@ -119,7 +119,9 @@ function removeC() {
         table.rows[i].deleteCell(-1);
     }
 
+
     console.log("Rows: " + numRows + " Columns: " + numCols + "\n Removed a column");
+
 }
 
 // Set global variable for selected color
