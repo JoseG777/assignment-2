@@ -158,5 +158,15 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-   
+    let table = document.getElementById("grid");
+
+    // Iterate through each cell and set the background color to white
+    while(table.rows.length > 0)
+    {
+        table.deleteRow(0);
+    }
+
+    numRows = 0;
+    numCols = 0;
+
 }
