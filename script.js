@@ -65,29 +65,29 @@ function addC() {
 
 // Remove a row
 function removeR() {
-        // If there are no rows, do nothing
-        if(numRows == 0){
-            return;
-        }
+    // If there are no rows, do nothing
+    if(numRows == 0){
+        return;
+    }
     
-        let table = document.getElementById("grid");
+    let table = document.getElementById("grid");
     
-        // get the first row
-        let row = table.querySelector("tr");
+    // get the first row
+    let row = table.querySelector("tr");
     
-        // remove the first row
-        table.removeChild(row);
-        numRows--;
+    // remove the first row
+    table.removeChild(row);
+    numRows--;
     
-        // if the row we removed was the last remaining row, then we have no columns
-        if(numRows == 0){
-            numCols = 0;
-        }
+    // if the row we removed was the last remaining row, then we have no columns
+    if(numRows == 0){
+        numCols = 0;
+    }
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    alert("Clicked Remove Column"); // Replace this line with your code.
 }
 
 // Set global variable for selected color
