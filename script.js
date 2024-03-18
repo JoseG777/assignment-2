@@ -105,6 +105,8 @@ function removeC() {
     if(numCols == 0){
         numRows = 0;
     }
+
+
 }
 
 // Set global variable for selected color
