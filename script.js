@@ -5,7 +5,30 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    let table = document.getElementById("grid");
+
+    // Check if there are no columns
+    if(numCols == 0){
+        // If there are no columns, add one column because the grid is empty
+        numCols++;
+    }
+
+    let new_row = document.createElement("tr");
+    for(let i = 0; i <numCols; i++){
+
+        let newBox = document.createElement("td");
+
+        newBox.onclick = function()
+        {
+            newBox.style.backgroundColor=colorSelected
+        };
+
+        new_row.appendChild(newBox);
+    }
+
+    table.appendChild(new_row);
+    numRows++;
+    
 }
 
 // Add a column
