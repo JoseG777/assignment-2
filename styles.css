@@ -3,10 +3,8 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
-    /* Simple background color for the whole page */
 }
 
-/* Styling for the menu buttons and select dropdown */
 button,
 select {
     margin-right: 10px;
@@ -22,13 +20,6 @@ select {
 button:hover,
 select:hover {
     background-color: #0056b3;
-}
-
-/* Container to center the grid table */
-#grid-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
 }
 
 table {
