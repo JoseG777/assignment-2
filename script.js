@@ -77,19 +77,6 @@ function removeR() {
     let table = document.getElementById("grid");
     table.deleteRow(-1); 
     numRows--;
-    /*
-    if(numRows != 0)
-    {
-        let table = document.getElementById("grid");
-    
-        // get the first row
-        let row = table.querySelector("tr");
-        
-        // remove the first row
-        table.removeChild(row);
-        numRows--;
-    }
-    */
     
     // if the row we removed was the last remaining row, then we have no columns
     if(numRows == 0){
@@ -102,7 +89,7 @@ function removeR() {
 // Remove a column
 function removeC() {
     let table = document.getElementById("grid");
-    // If there are no columns, do nothing
+    // If there are no columns, make sure to delete rows if there are any
     if(numCols == 0){
         numRows = 0;
         while(table.rows.length > 0)
@@ -112,7 +99,7 @@ function removeC() {
         return;
     }
 
-    
+    // Iterate through each row and delete the last box in each row
     numCols--;
     for(let i = 0; i < table.rows.length; i++)
     {
@@ -134,6 +121,7 @@ function selectColor(){
 function fillU(){
     let table = document.getElementById("grid");
 
+    // Iterate through each cell and set the background color to the selected color if it is not already colored
     for(let i = 0; i < table.rows.length; i++){
         for(let j = 0; j < table.rows[i].cells.length; j++)
         {
@@ -163,7 +151,7 @@ function fillAll(){
 function clearAll(){
     let table = document.getElementById("grid");
 
-    // Iterate through each cell and set the background color to white
+    // Iterate through each row and delete
     while(table.rows.length > 0)
     {
         table.deleteRow(0);
