@@ -1,9 +1,45 @@
-tr,td{
-    border:1px;
-    border-style: solid;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    /* Simple background color for the whole page */
 }
-td{
+
+/* Styling for the menu buttons and select dropdown */
+button,
+select {
+    margin-right: 10px;
+    /* Space between buttons */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+select:hover {
+    background-color: #0056b3;
+}
+
+/* Container to center the grid table */
+#grid-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    background-color: #f4f4f4;
+}
+
+tr,
+td {
+    border: 1px solid black;
     height: 50px;
     width: 50px;
     background-color: white;
+    /* Only the inside of cells should be white */
 }
