@@ -144,7 +144,15 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    let table = document.getElementById("grid");
+
+    // Iterate through each cell and set the background color to the selected color
+    for(let i = 0; i < numRows; i++){
+        for(let j = 0; j < numCols; j++){
+            let box = table.rows[i].cells[j];
+            box.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Clear all cells
