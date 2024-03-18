@@ -65,29 +65,46 @@ function addC() {
 
 // Remove a row
 function removeR() {
-        // If there are no rows, do nothing
-        if(numRows == 0){
-            return;
-        }
+    // If there are no rows, do nothing
+    if(numRows == 0){
+        return;
+    }
     
-        let table = document.getElementById("grid");
+    let table = document.getElementById("grid");
     
-        // get the first row
-        let row = table.querySelector("tr");
+    // get the first row
+    let row = table.querySelector("tr");
     
-        // remove the first row
-        table.removeChild(row);
-        numRows--;
+    // remove the first row
+    table.removeChild(row);
+    numRows--;
     
-        // if the row we removed was the last remaining row, then we have no columns
-        if(numRows == 0){
-            numCols = 0;
-        }
+    // if the row we removed was the last remaining row, then we have no columns
+    if(numRows == 0){
+        numCols = 0;
+    }
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    // If there are no columns, do nothing
+    if(numCols == 0){
+        return;
+    }
+    
+    let table = document.getElementById("grid");
+    
+    // Iterate through each row and remove the last box from each row
+    for(let i = 0; i < numRows; i++){
+        let row = table.rows[i];
+        row.removeChild(row.lastChild);
+    }
+    numCols--;
+    
+    // if the column we removed was the last remaining column, then we have no rows
+    if(numCols == 0){
+        numRows = 0;
+    }
 }
 
 // Set global variable for selected color
