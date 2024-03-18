@@ -13,19 +13,26 @@ function addR() {
         numCols++;
     }
 
+    // Creating a new row using "tr" which is a table row
     let new_row = document.createElement("tr");
+
+    // Create a new box for each column
     for(let i = 0; i <numCols; i++){
 
+        // Create a new box using "td" which is a table data
         let newBox = document.createElement("td");
 
+        // Set the color of the box to the selected color
         newBox.onclick = function()
         {
             newBox.style.backgroundColor=colorSelected
         };
 
+        // Append the new box to the new row
         new_row.appendChild(newBox);
     }
 
+    // Append the new row to the table
     table.appendChild(new_row);
     numRows++;
     
@@ -33,7 +40,27 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    let table = document.getElementById("grid");
+
+    // If there are no rows, add one row because the grid is empty
+    if(numRows == 0){
+        addR();
+    }
+
+    // Iterate through each row and add a new box to the end of each row
+    for(let i = 0; i < numRows; i++){
+        let newBox = document.createElement("td");
+
+        newBox.onclick = function()
+        {
+            newBox.style.backgroundColor=colorSelected
+        };
+
+        // Append the new box to the end of each row
+        table.rows[i].appendChild(newBox);
+    }
+    
+    numCols++;
 }
 
 // Remove a row
