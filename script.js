@@ -134,13 +134,12 @@ function selectColor(){
 function fillU(){
     let table = document.getElementById("grid");
 
-    for(let i = 0; i < table.rows.length; i++){
-        for(let j = 0; j < table.columns.length; j++){
-            let box = table.rows[i].cells[j];
-            if(box.style.backgroundColor == ""){
-                box.style.backgroundColor = colorSelected;
-            }
-        }
+    for(let j = 0; j < table.rows[i].cells.length; j++)
+    {
+      if(table.rows[i].cells[j].style.backgroundColor === "")
+      {
+        table.rows[i].cells[j].style.backgroundColor = colorSelected;
+      }
     }
 }
 
@@ -149,8 +148,10 @@ function fillAll(){
     let table = document.getElementById("grid");
 
     // Iterate through each cell and set the background color to the selected color
-    for(let i = 0; i < table.rows.length; i++){
-        for(let j = 0; j < table.rows[i].cells.length; j++){
+    for(let i = 0; i < table.rows.length; i++)
+    {
+        for(let j = 0; j < table.rows[i].cells.length; j++)
+        {
             table.rows[i].cells[j].style.backgroundColor = colorSelected;
         }
     }
